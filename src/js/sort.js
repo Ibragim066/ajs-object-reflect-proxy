@@ -1,10 +1,10 @@
-export default function orderByProps(obj, arrOrderForProps) {
+export default function orderByProps(obj, arrOrderProps) {
     const arrObjProps = Object.entries(obj)
         .map(([key, value]) => ({ key, value }))
         .sort((a, b) => a.key.localeCompare(b.key));
 
-    if (arrOrderForProps) {
-        for (const prop of arrOrderForProps.reverse()) {
+    if (arrOrderProps) {
+        for (const prop of arrOrderProps.reverse()) {
             if (!obj[prop]) {
                 throw new Error(
                     `Сортировка не возможна, свойство ${prop} не существует!`,
